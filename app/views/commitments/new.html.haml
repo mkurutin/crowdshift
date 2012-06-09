@@ -1,0 +1,11 @@
+Create a commitment
+
+#new-commitment
+  = form_for :commitment do |f|
+    = f.label :start_date
+    = f.text_field :start_date
+
+    = f.label :end_date
+    = f.text_field :end_date
+
+    = f.button "Create"

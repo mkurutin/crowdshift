@@ -1,0 +1,3 @@
+class CommitmentsController < ApplicationController
+
+end
