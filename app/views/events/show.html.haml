@@ -5,4 +5,4 @@
 .time
   = "From #{@event.start_date} to #{@event.end_date}"
 
-= link_to "Create a commitment", new_commitment_path
+= link_to "Create a commitment", new_event_commitment_path(@event.id)

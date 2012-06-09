@@ -1,11 +1,11 @@
-Create a commitment
+Create a commitmentt
 
 #new-commitment
-  = form_for :commitment do |f|
-    = f.label :start_date
-    = f.text_field :start_date
-
-    = f.label :end_date
-    = f.text_field :end_date
-
-    = f.button "Create"
+  = form_tag event_commitments_path, :method => :post, :id => @event.id do
+    .commitment-start-date
+      = label_tag :start_date
+      = text_field_tag :start_date
+    .commitment-end-date
+      = label_tag :end_date
+      = text_field_tag :end_date
+    = submit_tag "Create"
