@@ -8,6 +8,7 @@ gem 'rails', '3.2.5'
 gem 'sqlite3'
 gem 'haml'
 gem 'jquery_datepicker'
+gem 'httparty'
 
 
 # Gems used only for assets and not required
