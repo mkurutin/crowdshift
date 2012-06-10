@@ -1,18 +1,21 @@
-Create Event
-#new-event
-  = form_for @event do |f|
-    = f.label :name
-    = f.text_field :name
+#create-event-hack
 
-    = f.label :description
-    = f.text_area :description
+  #new-event
+    = form_for @event do |f|
+      // = f.label :name
+      = f.text_field :name
 
-    .event-start-date
-      = f.label :start_date
-      = f.text_field :start_date
+      // = f.label :description
+      = f.text_area :description
 
-    .event-end-date
-      = f.label :end_date
-      = f.text_field :end_date
+      = f.text_field :location
 
-    = f.submit "Create"
+      .event-start-date
+        // = f.label :start_date
+        = f.text_field :start_date
+
+      .event-end-date
+        // = f.label :end_date
+        = f.text_field :end_date
+
+      = f.submit "Create"

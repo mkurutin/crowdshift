@@ -10,4 +10,68 @@
  *
  *= require_self
  *= require_tree .
+ *= require jquery.ui.all
+ *= require jquery-ui-timepicker-addon
  */
+
+body {
+  margin: 0;
+}
+
+input, textarea {
+  position: absolute;
+  height: 42px;
+  border: none;
+  background: #fff;
+}
+
+#create-event-hack {
+  height: 1396px;
+  width: 1020px;
+  background: url(event_create.jpg) no-repeat left top;
+}
+
+#create-event-hack input, #create-event-hack textarea {
+  font-size: 36px;
+  left: 310px;
+  width: 395px;
+}
+
+#create-event-hack input[type=submit] {
+  text-indent: -9999em;
+  width: 190px;
+  height: 64px;
+  background: transparent;
+  left: 411px;
+  top: 1178px;
+  cursor: pointer;
+}
+
+#create-event-hack #event_name {
+  top: 550px;
+}
+
+#create-event-hack #event_start_date {
+  top: 661px;
+  width: 370px;
+}
+
+#create-event-hack #event_end_date {
+  top: 766px;
+  width: 370px;
+
+}
+
+#create-event-hack #event_location {
+  top: 871px;
+}
+
+#create-event-hack #event_description {
+  top: 996px;
+  height: 126px;
+  font-size: 14px;
+}
+
+.ui-datepicker {
+  font-size: 12px !important;
+}
