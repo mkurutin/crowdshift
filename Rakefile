@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-OccupyGraph::Application.load_tasks
+Crowdshift::Application.load_tasks

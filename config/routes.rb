@@ -1,4 +1,4 @@
-OccupyGraph::Application.routes.draw do
+Crowdshift::Application.routes.draw do
 
   resources :events do
     resources :commitments
