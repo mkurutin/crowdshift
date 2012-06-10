@@ -64,6 +64,7 @@ input, textarea {
 }
 
 #create-event-hack #event_start_date {
+  font-size: 24px;
   top: 661px;
   width: 345px;
 }
@@ -71,6 +72,7 @@ input, textarea {
 #create-event-hack #event_end_date {
   top: 766px;
   width: 345px;
+  font-size: 24px;
 }
 
 #create-event-hack #event_location {

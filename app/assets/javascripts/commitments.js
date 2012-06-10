@@ -1,4 +1,9 @@
 $(document).ready(function() {
-  $('.commitment-start-date input').datetimepicker();
-  $('.commitment-end-date input').datetimepicker();
+  var dtpOptions = {
+    dateFormat: "yy-mm-dd",
+    separator: " ",
+    timeFormat: "hh:mm"
+  }
+  $('.commitment-start-date input').datetimepicker(dtpOptions);
+  $('.commitment-end-date input').datetimepicker(dtpOptions);
 });

@@ -1,16 +1,30 @@
 //=require strftime
 
 $(document).ready(function() {
-  $('.event-start-date input').datetimepicker();
-  $('.event-end-date input').datetimepicker();
-
-  var url = 'http://localhost:5000/event/867cf935-7b70-428c-8f83-ccc1fb91f157/attendance?start=2012-05-09T00:00:00&callback=?';
+  var dtpOptions = {
+    dateFormat: "yy-mm-dd",
+    separator: " ",
+    timeFormat: "hh:mm"
+  }
+  $('.event-start-date input').datetimepicker(dtpOptions);
+  $('.event-end-date input').datetimepicker(dtpOptions);
 
   var data = JSON.parse($('.attendance').text());
   var att = data.attendance;
 
   att.forEach(function(d) {
-    d[0] = new Date(d[0]);
+    // FUUUUUUUCK YOU JAVASCRIPT!
+    var parts = d[0].split('T');
+    var date = parts[0].split('-');
+    var time = parts[1].split(':');
+
+    d[0] = new Date();
+    d[0].setFullYear(parseInt(date[0], 10));
+    d[0].setMonth(parseInt(date[1], 10) - 1);
+    d[0].setDate(parseInt(date[2], 10));
+    d[0].setHours(parseInt(time[0], 10));
+    d[0].setMinutes(parseInt(time[1], 10));
+    d[0].setSeconds(parseInt(time[2], 10));
   });
 
   var dates = att.map(function (d) { return d[0]; });
@@ -84,7 +98,7 @@ $(document).ready(function() {
     })
     .on("brushend", function () {
       var e = brush.extent(),
-          fmt = "%m/%d/%Y %H:%M";
+          fmt = "%Y-%m-%d %H:%M";
       jQuery('#start_date').val(e[0].strftime(fmt));
       jQuery('#end_date').val(e[1].strftime(fmt));
     });
