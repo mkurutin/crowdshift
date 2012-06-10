@@ -53,13 +53,12 @@ input, textarea {
 
 #create-event-hack #event_start_date {
   top: 661px;
-  width: 370px;
+  width: 350px;
 }
 
 #create-event-hack #event_end_date {
   top: 766px;
-  width: 370px;
-
+  width: 350px;
 }
 
 #create-event-hack #event_location {
