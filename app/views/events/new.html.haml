@@ -2,20 +2,16 @@
 
   #new-event
     = form_for @event do |f|
-      // = f.label :name
       = f.text_field :name
 
-      // = f.label :description
-      = f.text_area :description
-
-      = f.text_field :location
-
       .event-start-date
-        // = f.label :start_date
         = f.text_field :start_date
 
       .event-end-date
-        // = f.label :end_date
         = f.text_field :end_date
+
+      = f.text_field :location
+
+      = f.text_area :description
 
       = f.submit "Create"
