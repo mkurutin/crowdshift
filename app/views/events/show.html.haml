@@ -1,8 +1,23 @@
-.title
-  = @event.name
-.description
-  = @event.description
-.time
-  = "From #{@event.start_date} to #{@event.end_date}"
+#event-hack
 
-= link_to "Create a commitment", new_event_commitment_path(@event.id)
+  #graph
+
+  .title
+    = @event.name
+  .location
+    = @event.location
+  .description
+    = @event.description
+  
+
+  #new-commitment
+  = form_tag event_commitments_path(@event), :method => :post do
+    .commitment-start-date
+      = text_field_tag :start_date
+    .commitment-end-date
+      = text_field_tag :end_date
+
+    = submit_tag "Create"
+
+  .attendance.hidden
+    = @attendance.to_json

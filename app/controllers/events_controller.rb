@@ -14,5 +14,6 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find params[:id]
+    @attendance = Api::CrowdshiftService.new.get_attendance(@event.event_api_id, @event.start_date, @event.end_date)
   end
 end

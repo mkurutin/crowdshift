@@ -16,8 +16,10 @@ module Api
       self.class.post("/event/#{event_api_id}/commitment", options).parsed_response
     end
 
-    def get_attendance(event_api_id)
-      options = { :headers => { 'authorization' => "bearer 30a17a7e-faeb-46dd-a54c-94f36b9e1464"} }
+    def get_attendance(event_api_id, start_date, end_date)
+      options = { :headers => { 'authorization' => "bearer 30a17a7e-faeb-46dd-a54c-94f36b9e1464"},
+                  :query => { 'start' => start_date.utc.strftime("%Y-%m-%dT%H:%M:%S"), 
+                              'end' => end_date.utc.strftime("%Y-%m-%dT%H:%M:%S") }}
       self.class.get("/event/#{event_api_id}/attendance", options).parsed_response
     end
 
